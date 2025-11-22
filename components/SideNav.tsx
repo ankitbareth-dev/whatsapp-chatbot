@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Home,
   MessageCircle,
@@ -11,9 +11,12 @@ import {
   LogOut,
   ChevronRight,
 } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 const SideNav = () => {
   const pathname = usePathname();
+
+  const { logout } = useAuth();
 
   const menu = [
     { name: "Dashboard", href: "/dashboard", icon: <Home size={18} /> },
@@ -94,7 +97,7 @@ const SideNav = () => {
             </div>
           </div>
 
-          <button className="text-red-400 hover:text-red-500">
+          <button className="text-red-400 hover:text-red-500" onClick={logout}>
             <LogOut size={20} />
           </button>
         </div>
