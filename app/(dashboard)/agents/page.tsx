@@ -1,5 +1,7 @@
+import AIContainer from "@/components/AIContainer";
+
 const page = () => {
-  return <div>Agents</div>;
+  return <AIContainer />;
 };
 
 export default page;
