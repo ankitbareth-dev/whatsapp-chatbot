@@ -25,12 +25,11 @@ export default function Cards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
       {cards.map((card, idx) => (
         <div
           key={idx}
-          className="bg-[#0F1F2C] border border-[#1A2A35]
-          px-5 py-6 rounded-2xl shadow-lg flex items-center justify-between"
+          className="bg-[#0F1F2C] border border-[#1A2A35] px-5 py-6 rounded-2xl shadow-lg flex items-center justify-between"
         >
           <div className="flex flex-col">
             <p className="text-sm text-gray-300">{card.title}</p>
