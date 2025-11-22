@@ -1,24 +1,24 @@
-import { Users, MessageSquare, Bot, TrendingUp } from "lucide-react";
+import { MessageSquare, Inbox, Bot, TrendingUp } from "lucide-react";
 
 export default function Cards() {
   const cards = [
     {
-      title: "Total Subscribers",
+      title: "Messages Sent",
       value: "1.1k",
-      icon: <Users className="w-6 h-6 text-green-400" />,
-    },
-    {
-      title: "Active Chats",
-      value: "4",
       icon: <MessageSquare className="w-6 h-6 text-green-400" />,
     },
     {
-      title: "AI Agents",
+      title: "Messages Received",
+      value: "4",
+      icon: <Inbox className="w-6 h-6 text-green-400" />,
+    },
+    {
+      title: "Templates Used",
       value: "156",
       icon: <Bot className="w-6 h-6 text-green-400" />,
     },
     {
-      title: "Growth Rate",
+      title: "Response Rate",
       value: "0%",
       icon: <TrendingUp className="w-6 h-6 text-green-400" />,
     },
@@ -36,6 +36,7 @@ export default function Cards() {
             <p className="text-sm text-gray-300">{card.title}</p>
             <h2 className="text-2xl font-bold text-white mt-1">{card.value}</h2>
           </div>
+
           <div className="p-3 bg-[#0D1720] rounded-xl border border-[#1A2A35]">
             {card.icon}
           </div>
