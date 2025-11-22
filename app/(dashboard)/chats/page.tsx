@@ -1,5 +1,7 @@
+import ChatContainer from "@/components/ChatContainer";
+
 const page = () => {
-  return <div>Chats</div>;
+  return <ChatContainer />;
 };
 
 export default page;

@@ -1,5 +1,6 @@
+import BulkMessagesContainer from "@/components/BulkMessagesContainer";
 const page = () => {
-  return <div>Bulk</div>;
+  return <BulkMessagesContainer />;
 };
 
 export default page;
