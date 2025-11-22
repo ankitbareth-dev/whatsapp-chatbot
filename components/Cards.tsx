@@ -1,15 +1,38 @@
 import { MessageSquare, Inbox, Bot, TrendingUp } from "lucide-react";
 
-export default function Cards() {
+async function getCardData() {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+
+  try {
+    const res = await fetch(`${baseUrl}/api/dashboard/stats`, {
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      throw new Error("Failed API");
+    }
+
+    return res.json();
+  } catch (err) {
+    console.error("API Error:", err);
+
+    return {
+      total_messages_sent: 0,
+      total_messages_received: 0,
+    };
+  }
+}
+
+export default async function Cards() {
+  const data = await getCardData();
   const cards = [
     {
       title: "Messages Sent",
-      value: "1.1k",
+      value: data.total_messages_sent,
       icon: <MessageSquare className="w-6 h-6 text-green-400" />,
     },
     {
       title: "Messages Received",
-      value: "4",
+      value: data.total_messages_received,
       icon: <Inbox className="w-6 h-6 text-green-400" />,
     },
     {
